@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>wisata Semarang</title>
+  <style>
+    /* ========== GLOBAL STYLE ========== */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      color: #333;
+    }
+
+    header {
+      background: #cf5a1f;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* ========== PAKET WISATA ========== */
+    .paket-wisata {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+
+    .paket {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 300px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Gambar Responsif */
+    .gambar-container {
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .gambar-wisata {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .gambar-wisata:hover {
+      transform: scale(1.03);
+    }
+
+    /* Video Responsif */
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      margin-top: 15px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    /* ========== FORM PEMESANAN ========== */
+    form {
+      max-width: 500px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f9f9f9;
+    }
+
+    input, button {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
+
+    button {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .checkbox-group {
+      margin: 15px 0;
+    }
+
+    .checkbox-group label {
+      display: block;
+      margin: 5px 0;
+    }
+
+    #hasil {
+      background: #e8f5e9;
+      padding: 10px;
+      border-radius: 4px;
+      margin: 15px 0;
+    }
+
+    /* ========== RESPONSIVE BREAKPOINTS ========== */
+    @media (max-width: 768px) {
+      .paket {
+        width: 100%;
+      }
+
+      nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Selamat Datang di Kota Semarang</h1>
+    <nav>
+      <a href="index.html">Beranda</a>
+      <a href="pemesanan.html">Pesan Paket</a>
+      <a href="riwayat.html">Riwayat Pesanan</a>
+    </nav>
+  </header>
+
+  <!-- Daftar Paket Wisata -->
+  <section class="paket-wisata">
+    <div class="paket">
+      <div class="gambar-container">
+        <img 
+          src="assets/Kota Lama Semarang.jpeg" 
+          alt="Gunung Batur" 
+          class="gambar-wisata"
+          loading="lazy"
+        >
+      </div>
+      <h3>Kota Lama</h3>
+      <p>Menyusuri jejak masa lalu di sudut-sudut Eropa kecil di Semarang.</p>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/60heIh2koSg" 
+          frameborder="0" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+
+    <!-- Tambahkan paket lain di sini -->
+    <div class="paket">
+      <div class="gambar-container">
+        <img 
+          src="assets/lawang sewu.jpeg" 
+          alt="Rafting Ayung" 
+          class="gambar-wisata"
+          loading="lazy"
+        >
+      </div>
+      <h3>Lawang Sewu</h3>
+      <p>Ikon megah bersejarah dengan seribu pintu dan kisah tak terlupakan.</p>
+      <div class="video-container">
+        <iframe 
+          src="https://www.youtube.com/embed/O1JlCKOEjr0" 
+          frameborder="0" 
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+    <div class="paket">
+      <div class="gambar-container">
+        <img 
+          src="assets/sampokong.jpeg" 
+          alt="Rafting Ayung" 
+          class="gambar-wisata"
+          loading="lazy"
+        >
+        <div>
+            <h3>Sam Poo Kong</h3>
+            <p>Jejak sejarah Laksamana Cheng Ho dalam harmoni budaya dan keindahan arsitektur.</p>
+            <div class="video-container">
+              <iframe 
+                src="https://www.youtube.com/embed/3w_5OLvIqvQ" 
+                frameborder="0" 
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+          
+  </section>
+
+  <script>
+    // Fungsi untuk halaman pemesanan (simpan di script.js jika terpisah)
+    function hitungTagihan() {
+      let hargaPaket = 0;
+      const cboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+      
+      cboxes.forEach(cbox => {
+        hargaPaket += parseInt(cbox.value);
+      });
+
+      const peserta = document.getElementById("peserta").value;
+      const hari = 1;
+      const total = hargaPaket * peserta * hari;
+
+      document.getElementById("harga-paket").textContent = `Rp ${hargaPaket.toLocaleString()}`;
+      document.getElementById("total-tagihan").textContent = `Rp ${total.toLocaleString()}`;
+    }
+
+    function simpanPesanan() {
+      const nama = document.getElementById("nama").value;
+      const peserta = document.getElementById("peserta").value;
+      const harga = document.getElementById("harga-paket").textContent;
+      const total = document.getElementById("total-tagihan").textContent;
+
+      const pesanan = {
+        nama: nama,
+        jumlahPeserta: peserta,
+        harga: harga,
+        total: total
+      };
+
+      localStorage.setItem('pemesanan', JSON.stringify(pesanan));
+      alert("Pesanan disimpan! Lihat di console browser (F12 > Application > LocalStorage)");
+    }
+  </script>
+</body>
+</html>
